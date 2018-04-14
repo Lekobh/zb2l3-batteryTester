@@ -1,63 +1,69 @@
 
-<span id="magicparlabel-7"></span>Description
+
+
+
+<span id="magicparlabel-7"></span>Descrição
 ---------------------------------------------
 
-<span id="magicparlabel-667"></span>This is a simple, cheap, standalone battery capacity tester from Ebay (around $5). It connects to the battery and a load resistor, and draws power from a microUSB connector (no communications to the computer, just power). It draws power from the battery until a predetermined discharge termination voltage is reached, whence it displays the integrated Ampere-hours (Ah) of battery capacity (it's a pity that Ah is the accepted unit rather than Volt-Ampere-seconds, a.k.a Joules). The Ebay description is hard to understand, so I edited it into more conventional English. All errors therefore are mine—I am uncertain about the details in the calibration section, for instance.
+<span id="magicparlabel-667"></span> Este é um testador de capacidade da bateria bem simples, barato e autonomo. Ele se conecta à bateria e a um resistor de carga é energizado apartir de um conector microUSB (sem comunicações com o computador, apenas alimentação). Ele consome energia da bateria até que seja alcançada uma tensão de fim de descarga predeterminada, por fim é exibida a capacidade da bateria em Ampere-hours (Ah). A descrição do fabricante é difícil de entender, então eu o editei em português (inglês) mais convencional. Todos os erros, portanto, são meus - não tenho certeza sobre os detalhes na seção de calibração, por exemplo.
 
--   External load resistor (7.5 Ω)
--   Power supply voltage: DC4.5-6V (micro USB interface)
--   Working current: less than 70mA
--   Measured battery voltage: 1.00V-15.00V, resolution 0.01V
--   Automatically selected termination voltage, depending on the initial charged cell voltage (range: 0.5-11.0V)
--   Maximum current 3A, resolution 0.001A
--   The maximum measurement error voltage: 1% +- 0.03V
--   The maximum measurement error of current: 2% +- 0.010A
--   The maximum battery capacity range: 0.001Ah..9999Ah (values lower than 10Ah are displayed as X.XXX; values between 10Ah and 99.99Ah are displayed as XX.XX, and so on).
--   Board size: 50mm long by 36mm wide, by 17mm high, including standoffs
+- Resistor de carga externa (7,5 Ω)
+- Tensão de alimentação: DC4.5-6V (interface micro USB)
+- Corrente de trabalho: menos de 70mA
+- Tensão da bateria medida: 1.00V-15.00V, resolução 0.01V
+- Tensão de terminação selecionada automaticamente, dependendo da tensão da célula carregada inicial (faixa: 0.5-11.0V)
+- Corrente máxima 3A, resolução 0,001A
+- A tensão máxima de erro de medição: 1% + - 0,03V
+- O erro máximo de medição da corrente: 2% + - 0,010A
+- A faixa máxima de capacidade da bateria: 0,001Ah..9999Ah (valores inferiores a 10Ah são exibidos como X.XXX; os valores entre 10Ah e 99.99Ah são exibidos como XX.XX e assim por diante).
+- Tamanho da placa: 50 mm de comprimento por 36 mm de largura, por 17 mm de altura, incluindo espaçadores
 
-<span id="magicparlabel-18"></span>Note: in order to improve the voltage measurement accuracy, the circuit applies a DC bias. The display may show a small residual value, which does not affect the actual measurement.
+<span id="magicparlabel-18"></span>Nota: para melhorar a precisão da medição de tensão, o circuito aplica uma polarização DC. O display pode mostrar um pequeno valor residual, que não afeta a medição real.
 
-<span id="magicparlabel-19"></span>Usage instructions
+<span id="magicparlabel-19"></span>Instruções de uso
 -----------------------------------------------------
 
-1.  Measured battery should be fully charged.
-2.  Connect to the tested battery observing the polarity (+ terminal on the PCB to positive battery terminal). ***Reversing The Polarity May Damage The Circuit!*** Connect the operating power to the tester via the micro USB cable. The display should indicate the battery voltage.
-3.  Start test by pressing the "OK" button. The tester will automatically set suitable termination voltage, according to the battery full charge voltage, and flash it 3 times upon starting the test.
-    -   The termination voltage chan be changed in 0.1V increments after starting the test, by pressing the "+" or "-" keys. The termination voltage is displayed with a leading P character.
+1.  A bateria a ser medida deve estar totalmente carregada.
+2.  Conecte a bateria testada observando a polaridade (terminal + no PCB para o terminal positivo da bateria). ***Inverter a polaridade pode danificar o circuito!*** Conecte a alimentação ao testador através do cabo micro USB. O display deve indicar a tensão da bateria.
+ 
+3.  Inicie o teste pressionando o botão "OK". O testador irá automaticamente ajustar a voltagem de terminação adequada, de acordo com a voltagem de carga total da bateria, e piscar 3 vezes ao iniciar o teste.
+    -   ***A tensão final de descarga pode ser alterada em incrementos de 0,1 V após o início do teste, pressionando as teclas "+" ou "-". A tensão final de descarga é exibida com um caractere P inicial.***
 
-4.  During testing, the electronic switch connects the load resistor, and the testing data are displayed in sequence, as shown by the LED indicator:
-    -   the integrated capacity (Ah),
-    -   instantaneous discharge current (A)
-    -   current battery voltage (V)
+4.  Durante o teste, o comutador eletrônico conecta o resistor de carga e os dados de teste são exibidos em seqüência, conforme mostrado pelo indicador LED:
+    -   A capacidade acumulada (Ah),
+    -   Corrente de descarga instantânea (A)
+    -   Tensão atual da bateria (V) 
 
-5.  When the battery voltage reaches the termination voltage, the tester cuts off the load control switch, and displays the capacity (Ah) and rapidly blinks the corresponding LED indicator. Press "OK" to terminate flashing. Pressing the "OK" button again returns to power on state, so that another battery can be connected and tested.
+5.  Quando a tensão da bateria atinge a tensão final de descarga, o testador corta a chave de controle de carga e exibe a capacidade (Ah) e pisca rapidamente o indicador LED correspondente. Pressione "OK" para terminar de piscar. Pressionar o botão "OK" novamente retorna ao estado ligado, para que outra bateria possa ser conectada e testada.
 
-### <span id="magicparlabel-29"></span>The error codes
+### <span id="magicparlabel-29"></span>Os códigos de erro
 
-Err1:  
-the battery voltage higher than 15V
+**Err1:***  
+a tensão da bateria superior a 15V
 
-Err2:  
-the battery voltage is lower than the setting voltage termination
+***Err2:***  
+a tensão da bateria é menor que a tensão final de descarga ajustada
 
-Err3:  
-the battery is unable to withstand the load discharge current (either the internal battery resistance or connector/cable resistance is too large)
+***Err3:***  
+a bateria não consegue suportar a corrente de descarga de carga (a resistência da bateria interna ou a resistência do conector / cabo é muito alta)
 
-Err4:  
-the current is too large (current is more than 3.1A)
+***Err4:***  
+a corrente é muito alta (a corrente é maior que 3,1A)
 
-### <span id="magicparlabel-34"></span>Calibration
+### <span id="magicparlabel-34"></span>Calibração
 
-<span id="magicparlabel-35"></span>Apply USB power and simultaneously press all three buttons to enter the calibration mode and perform the following steps
+<span id="magicparlabel-35"></span> Aplique energia USB e pressione simultaneamente todos os três botões para entrar no modo de calibração e executar os seguintes passos
 
-1.  The first calibration step after entering the calibration displays the 0u0A; short connect both positive and negative input terminal and press the "OK" button
-2.  Next, the display will show J10u; apply 10.00V DC between the input positive and negative terminal and press the "OK" button again.
-3.  The display will show J2.0A; apply 2.0 A DC current between the input terminals and press the "OK" button to complete the calibration.
 
-<span id="magicparlabel-133"></span>If the tester determines that the calibration data is reliable, it will in turn show 4 calibration numbers after completing the procedure; otherwise it will ignore the calibration attempt, discard the data and exit the procedure.
+1.  O primeiro passo de calibração após entrar na calibração exibe o ***0u0A***; curto circuitar os terminais de entrada para bateria positivo e negativo e pressione o botão ***"OK"***
+2.  Em seguida, o display mostrará ***J10u***; aplique 10.00V DC entre o terminal positivo e negativo na entrada para bateria e pressione o botão ***"OK"*** novamente.
+3.  O display mostrará ***J2.0A***; aplique 2,0 A corrente CC entre os terminais de entrada para bateria e pressione o botão ***"OK"*** para completar a calibração.
 
-### <span id="magicparlabel-36"></span>Shipped contents:
 
--   2x 5W 7.5ohm Resistance
--   1x Battery Capacity Tester Board ( USB cable is NOT provided )
+<span id="magicparlabel-133"></span>Se o testador determinar que os dados de calibração são confiáveis, ele mostrará 4 números de calibração após a conclusão do procedimento; caso contrário, ele ignorará a tentativa de calibração, descartará os dados e sairá do procedimento.
+
+### <span id="magicparlabel-36"></span>Conteúdo:
+
+- 2 x Resistência de 5W 7.5ohm
+- 1x placa do verificador da capacidade da bateria (o cabo do USB não é fornecido)
 
