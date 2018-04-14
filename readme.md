@@ -1,5 +1,3 @@
-<span id="magicparlabel-2"></span>
-<span id="magicparlabel-6"></span>![image: 0\_home\_przemek\_Projects\_Electronics\_zb2l3-batteryTester\_zb2l3.png](0_home_przemek_Projects_Electronics_zb2l3-batteryTester_zb2l3.png)
 
 <span id="magicparlabel-7"></span>Description
 ---------------------------------------------
